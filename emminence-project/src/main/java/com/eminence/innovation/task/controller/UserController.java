@@ -19,7 +19,7 @@ import com.eminence.innovation.task.model.User;
 import com.eminence.innovation.task.service.UserService;
 
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping("/api")
 public class UserController {
 
     private final UserService userService;

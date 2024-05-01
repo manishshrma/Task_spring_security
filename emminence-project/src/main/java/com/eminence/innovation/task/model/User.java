@@ -18,6 +18,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
+import org.springframework.validation.annotation.Validated;
 
 @Table(name = "users")
 @Entity
@@ -45,7 +46,7 @@ public class User implements UserDetails {
     @Column(name = "updated_at")
     private Date updatedAt;
 
-    @Transient
+//    @Transient
 	private long expirationTime;
     
 	@JsonIgnore

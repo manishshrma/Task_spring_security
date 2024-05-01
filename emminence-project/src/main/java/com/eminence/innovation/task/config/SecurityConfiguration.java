@@ -32,7 +32,9 @@ public class SecurityConfiguration {
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
     	return http.csrf(AbstractHttpConfigurer::disable).authorizeHttpRequests((authorize) -> authorize
                 .requestMatchers("api/auth/**").permitAll()
-                .requestMatchers("api/users/all").hasAnyAuthority(UserRoles.ROLE_ADMIN)
+
+                .requestMatchers("api/user").hasAnyAuthority(UserRoles.ROLE_USER)
+                .requestMatchers("api/all").hasAnyAuthority(UserRoles.ROLE_ADMIN)
                 //.requestMatchers("api/football/**").hasAnyAuthority(UserRoles.ROLE_USER)
                //.requestMatchers("api/football/**").hasAnyAuthority(UserRoles.ROLE_USER,UserRoles.ROLE_ADMIN)                
                 .anyRequest().permitAll())
